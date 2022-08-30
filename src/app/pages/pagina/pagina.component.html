@@ -1,0 +1,26 @@
+<!-- <app-intro-juego></app-intro-juego> -->
+
+<div class="contenedor-principal ">
+
+    <div class="row">
+    
+        <div class="col-3">
+            <app-visor  (iniciadoJuego)="iniciadoJuegoVisor( $event )">
+
+            </app-visor>
+    
+        </div>
+        <div class="col">
+            <app-tablero  [iniciadoJuego]="iniciadoJuego"></app-tablero>
+    
+        </div>
+    
+    </div>
+    
+    <div class="row">
+        <app-footer></app-footer>
+    
+    </div>
+
+</div>
+

@@ -1,0 +1,16 @@
+<div    class="contenedor-carta"
+        *ngFor="let carta of cartas, let i = index"
+        [ngClass]="{ 'activo': i === click1 || i === click2 || carta.clickado,
+                     'clickado': carta.clickado  }"
+        (click)="cartaSeleccionada( carta, i )"
+        >
+
+    <img    [src]="carta.img" 
+            [alt]="carta.nombre"
+            class="img"
+            >
+
+     <p>{{ carta.id }}</p>
+        
+        
+</div>

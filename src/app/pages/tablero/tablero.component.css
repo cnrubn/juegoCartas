@@ -1,0 +1,11 @@
+.contenedor-tablero {
+    /* background-color: antiquewhite; */
+    /* height: 95vh;
+    padding: 15px; */
+}
+
+.contenedor-cartas {
+    background-color: aquamarine;
+    height: 95vh;
+    /* padding: 15px; */
+}
