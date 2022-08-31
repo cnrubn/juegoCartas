@@ -7,7 +7,7 @@ import { Carta, Jugador } from '../interfaces/interfaces';
 export class JuegoServiciosService {
 
   jugador: Jugador = {
-    nombre: 'Rubén',
+    nombre: '',
     puntos: 0,
     intentos: 0,
     nivel: 0,
@@ -98,7 +98,7 @@ export class JuegoServiciosService {
       this.jugador = JSON.parse( localStorage.getItem( 'jugador' )! );
     } 
 
-    console.log('jgd', this.jugador);
+    // console.log('jgd', this.jugador);
 
     return this.jugador;
   }

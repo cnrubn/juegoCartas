@@ -48,7 +48,7 @@ export class FasesJuegoService {
 
     this.jugador = this.sv.getJugadorLocalStorage();
     
-    console.log( 'jugador::',this.jugador)
+    // console.log( 'jugador::',this.jugador)
     // console.log(this.cartasJugando)
     // console.log({carta1,carta2})
 
@@ -100,7 +100,7 @@ export class FasesJuegoService {
     this.jugador.intentos = 0; 
     this.jugador.nivel++;
 
-    console.log('this.jugador::', this.jugador)
+    // console.log('this.jugador::', this.jugador)
 
 
     this.sv.guardarJugadorLocalStorage();
@@ -110,13 +110,13 @@ export class FasesJuegoService {
     }
 
 
-    // this.fase1_ObtenerCartas();
+    console.log('ronda completa');
 
   } 
 
   fase_Restablecer(){
 
-    console.log('restablecer')
+    // console.log('restablecer')
 
     this.sv.jugador = {
       nombre: '',

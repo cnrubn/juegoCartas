@@ -2,24 +2,40 @@
 
 <div class="contenedor-principal ">
 
-    <div class="row">
-    
-        <div class="col-3">
-            <app-visor  (iniciadoJuego)="iniciadoJuegoVisor( $event )">
-
-            </app-visor>
-    
-        </div>
-        <div class="col">
-            <app-tablero  [iniciadoJuego]="iniciadoJuego"></app-tablero>
-    
-        </div>
-    
+    <div    class="contenedor-info"
+            *ngIf="!activo"
+            >
+                <app-intro-juego    (siguienteEtapa)="iniciadoJuegoReglas( $event )"></app-intro-juego>
     </div>
     
-    <div class="row">
-        <app-footer></app-footer>
     
+
+    <div    class="contenedor-juego"
+            *ngIf="activo"
+            >
+        <div class="row">
+        
+            <div class="col-3">
+                <app-visor  (iniciadoJuego)="iniciadoJuegoVisor( $event )"
+
+                (reset)="restablecerJuego( $event )"
+
+                
+                >
+                </app-visor>
+        
+            </div>
+            <div class="col">
+                <app-tablero  [iniciadoJuego]="iniciadoJuego"></app-tablero>
+        
+            </div>
+        
+        </div>
+        
+        <div class="row">
+            <app-footer></app-footer>
+        
+        </div>
     </div>
 
 </div>

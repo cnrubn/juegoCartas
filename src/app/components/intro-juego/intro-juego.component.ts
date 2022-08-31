@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { infoFases, Jugador } from 'src/app/interfaces/interfaces';
+import { InfoFasesService } from 'src/app/services/info-fases.service';
+import { JuegoServiciosService } from 'src/app/services/juego-servicios.service';
+import { SecuenciaJuegoService } from 'src/app/services/secuencia-juego.service';
 
 @Component({
   selector: 'app-intro-juego',
@@ -6,10 +10,64 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./intro-juego.component.css']
 })
 export class IntroJuegoComponent implements OnInit {
+  activaIntro: boolean = true;
+  activaReglas: boolean = false;
+  activaNiveles: boolean = false;
 
-  constructor() { }
+  nombreIncorrecto: boolean = false;
+
+  jugador!: Jugador;
+
+  infoFases!: infoFases[];
+
+  infoMostrar!: infoFases;
+
+
+  @Output() siguienteEtapa = new EventEmitter<boolean>();
+
+  constructor( private sv: JuegoServiciosService,
+               private secuencia: SecuenciaJuegoService,
+               private info: InfoFasesService  ) { }
 
   ngOnInit(): void {
+
+    this.infoFases = this.info.infoFases;
+
+
+    this.infoMostrar = this.infoFases[0];
+    // console.log(this.infoMostrar);
+
+
+  }
+
+  introNombre( nombre: any ){
+
+    this.nombreIncorrecto = false;
+
+    if( nombre.length < 3 ){
+      this.nombreIncorrecto = true;
+      return;
+    }
+
+    this.jugador = this.sv.getJugadorLocalStorage();
+    this.jugador.nombre = nombre;
+    this.sv.guardarJugadorLocalStorage();
+
+    this.infoMostrar = this.infoFases[1];
+
+
+    this.activaIntro = false;
+    this.activaReglas = true;
+    
+    // console.log(this.infoMostrar);
+    
+  }
+
+  siguienteReglas(){
+    // this.activaReglas = false;
+
+    this.siguienteEtapa.emit(true);
+
   }
 
 }

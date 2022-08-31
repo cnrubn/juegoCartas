@@ -1,0 +1,11 @@
+.contenedor-principal {
+    border: 3px solid crimson;
+    width: 100%;
+    height: 100vh;
+}
+
+.contenedor-ficha {
+    border: 3px solid rgb(123, 220, 20);
+    width: 90%;
+    height: 600px;
+}

@@ -15,7 +15,11 @@ export class VisorComponent implements OnInit, DoCheck {
 
   restablecer: boolean = false;
 
+  visorActivo: boolean = true;
+
   @Output() iniciadoJuego = new EventEmitter<boolean>();
+
+  @Output() reset = new EventEmitter<boolean>();
 
 
   // @Output()  emisor = new EventEmitter<string>();
@@ -45,7 +49,7 @@ export class VisorComponent implements OnInit, DoCheck {
 
   ngDoCheck() {
     
-    console.log('entra');
+    // console.log('entra');
     
 
       if( localStorage.getItem( 'jugador' ) ){
@@ -70,7 +74,7 @@ export class VisorComponent implements OnInit, DoCheck {
     
     // this.fasesService.inicioJuego();
 
-    console.log('iniciado');
+    // console.log('iniciado');
     
     // console.log(this.cartasJugando)
 
@@ -85,6 +89,15 @@ export class VisorComponent implements OnInit, DoCheck {
     
   }
 
+  preRestablecerJuego(){
+    this.visorActivo = false;
+  }
+
+  cancelar(){
+    this.visorActivo = true;
+
+  }
+
 
   restablecerJuego(){
     // localStorage.removeItem('jugador');
@@ -95,6 +108,9 @@ export class VisorComponent implements OnInit, DoCheck {
     // this.sv.jugador.intentos = 0;
 
     // return this.restablecer = true;
+
+    this.reset.emit(true);
+
   }
   
 }

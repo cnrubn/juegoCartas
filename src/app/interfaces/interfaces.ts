@@ -14,3 +14,16 @@ export interface Carta {
     ref?: number;
 }
 
+
+export interface infoFases {
+    id: number;
+    tit: string;
+    txt?: string;
+    img?: string;
+    titPubli?: string;
+    txtPubli?: string;
+    imgPubli?: string;
+    activo?: boolean;
+
+}
+
