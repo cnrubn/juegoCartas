@@ -3,21 +3,32 @@
     <div class="contenedor-ficha">
         
         <!-- FICHA TIPO NOMBRE -->
-        <div    class="ficha-nombre"
+        <div    class="ficha-nombre d-flex align-items-center justify-content-center"
                 *ngIf="activaIntro"
                 >
-            
-            <h2>{{ infoMostrar.tit }}</h2>
-            <input  type="text"
-                    #nombre
-                    >
-            <p  *ngIf="nombreIncorrecto">Introduce un nombre de al menos 3 caracteres.</p>
 
-            <button type="button"
-                    (click)="introNombre( nombre.value )"
-                    >
-                Siguiente
-            </button>
+
+            
+            <div class="contenido-ficha">
+                <h2>{{ infoMostrar.tit }}</h2>
+                <input  type="text"
+                        #nombre
+                        >
+                <p  *ngIf="nombreIncorrecto">Introduce un nombre de al menos 3 caracteres.</p>
+                <br>
+
+
+                <div class="contenedor-boton d-flex justify-content-center align-items-center">
+                    <button type="button"
+                            (click)="introNombre( nombre.value )"
+                            >
+                        Siguiente
+                    </button>
+                </div>
+
+
+            </div>
+
 
         </div>
 

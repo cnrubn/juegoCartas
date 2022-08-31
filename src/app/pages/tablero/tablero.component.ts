@@ -32,7 +32,7 @@ export class TableroComponent implements OnInit, OnChanges {
 
       this.cartasJugando = this.fasesServicios.fase1_ObtenerCartas();
 
-      console.log( this.cartasJugando);
+      // console.log( this.cartasJugando);
 
       if( this.iniciadoJuego ){
 

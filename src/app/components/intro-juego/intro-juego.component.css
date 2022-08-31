@@ -1,16 +1,58 @@
 .contenedor-principal {
-    border: 3px solid crimson;
+    /* border: 3px solid crimson; */
     width: 100%;
     height: 100vh;
 }
 
 .contenedor-ficha {
-    border: 3px solid rgb(123, 220, 20);
+    border: 15px solid #E8E8C9;
     width: 90%;
     height: 800px;
+    border-radius: 45px;
+    background-color: #000;
+    color: #fff;
+    overflow: hidden;
+}
 
+
+
+
+
+/* FICHA INTRO */
+.ficha-nombre {
+    width: 100%;
+    height: 100%;
+    padding: 45px;
+}
+
+.contenido-ficha h2 {
+    font-size: 75px;
+    margin-bottom: 40px;
+}
+
+.contenido-ficha input {
+    width: 100%;
+    font-size: 75px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-bottom: 2px solid #E8E8C9;
+    margin-bottom: 45px;
+}
+
+.contenido-ficha p {
+    font-size: 25px;
+    opacity: 45%;
+    
+}
+
+.contenido-ficha button {
+    border-radius: 90px;
+    font-size: 45px;
+    padding: 20px 50px;
 
 }
+
 
 
 /* FICHA NIVELES */

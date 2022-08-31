@@ -1,34 +1,36 @@
-<div class="contenedor-visor">
+<div class="contenedor-visor d-flex justify-content-center align-items-center">
+    
 
-    <div    class="contenedor-visor-juego"
-            *ngIf="visorActivo else pregunta"        
-            >
-        <p>visor works!</p>
-        <pre>{{ jugador | json }}</pre>
-        <button (click)="inicioJuego()"
-        
+    <div class="contenedor-visor-flotante">
+        <div    class="contenedor-visor-juego"
+                *ngIf="visorActivo else pregunta"
                 >
-            Jugar
-        </button>
-        <button (click)="preRestablecerJuego()"
+            <p>visor works!</p>
+            <pre>{{ jugador | json }}</pre>
+            <button (click)="inicioJuego()"
         
-                >
-            Restablecer
-        </button>
+                    >
+                Jugar
+            </button>
+            <button (click)="preRestablecerJuego()"
+        
+                    >
+                Restablecer
+            </button>
+        </div>
+        <ng-template    #pregunta>
+            <h2>Advertencia</h2>
+            <p>Al pulsar restablecer perderá todo el progreso y el juego se iniciará.</p>
+            <button (click)="cancelar()"
+                    >
+                        Cancelar
+            </button>
+            <button (click)="restablecerJuego()"
+                    >
+                        Restablecer
+            </button>
+        </ng-template>
     </div>
-
-    <ng-template    #pregunta>
-        <h2>Advertencia</h2>
-        <p>Al pulsar restablecer perderá todo el progreso y el juego se iniciará.</p>
-        <button (click)="cancelar()"
-                >
-                    Cancelar
-        </button>
-        <button (click)="restablecerJuego()"
-                >
-                    Restablecer
-        </button>
-    </ng-template>
     
     
 </div>

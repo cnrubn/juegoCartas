@@ -41,8 +41,8 @@ export class PaginaComponent implements OnInit {
 
     this.iniciadoJuego = event;
 
-    console.log(this.iniciadoJuego);
-    console.log(this.activo);
+    // console.log(this.iniciadoJuego);
+    // console.log(this.activo);
 
     // setTimeout(() => {
     //   this.iniciadoJuego = false;

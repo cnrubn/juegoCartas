@@ -1,4 +1,22 @@
 .contenedor-visor {
-    background-color: darkcyan;
+    /* background-color: darkcyan; */
     height: 95vh;
+    /* display: flex;
+    flex-wrap: wrap; */
+
+
+    
+}
+
+.contenedor-visor-flotante {
+
+    width: 90%;
+    height: 95%;
+    border: 15px solid #E8E8C9;
+    border-radius: 45px;
+    background-color: #000;
+    color: #fff;
+    overflow: hidden;
+
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
