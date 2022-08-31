@@ -74,7 +74,7 @@ export class CartaComponent implements OnInit {
   
       }
       
-    }, 3000 );
+    }, 2000 );
 
     // INTENTO ACERTADO
 

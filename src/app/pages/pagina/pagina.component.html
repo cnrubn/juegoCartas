@@ -26,7 +26,13 @@
         
             </div>
             <div class="col">
-                <app-tablero  [iniciadoJuego]="iniciadoJuego"></app-tablero>
+                <app-tablero  [iniciadoJuego]="iniciadoJuego"
+
+                (testigoNivel)="terminadoRonda( $event )"
+
+
+                
+                ></app-tablero>
         
             </div>
         

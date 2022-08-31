@@ -38,26 +38,26 @@
         
 
         <!-- FICHA TIPO NIVELES -->
-        <div    class="ficha-niveles d-flex justify-content-between"
+        <div    class="ficha-niveles"
                 *ngIf="activaNiveles"
                 >
             
-            <div class="lado-izquierdo col-8">
+            <div class="lado-izquierdo">
 
-                <h2>Título</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas error quisquam at animi, fuga ipsam delectus quasi ex nobis ut odio repellendus impedit fugit et libero, nulla placeat esse deleniti quibusdam porro dolor beatae aperiam. Corrupti laudantium beatae delectus inventore. Odio ducimus quas maxime incidunt similique accusamus, atque officia ad!</p>
-                <img src="assets/img/placeholder.png" alt="...">
-                <button>
+                <h2>{{ infoMostrar.tit }}</h2>
+                <p>{{ infoMostrar.txt }}</p>
+                <img [src]="infoMostrar.img" alt="...">
+                <button (click)="siguienteReglas()">
                     Siguiente
                 </button>
                 
             </div>
             
-            <div class="lado-derecho col-4">
+            <div class="lado-derecho">
 
-                <h2>Título</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas error quisquam at animi, fuga ipsam delectus quasi ex nobis ut odio repellendus impedit fugit et libero, nulla placeat esse deleniti quibusdam porro dolor beatae aperiam. Corrupti laudantium beatae delectus inventore. Odio ducimus quas maxime incidunt similique accusamus, atque officia ad!</p>
-                <img src="assets/img/placeholder.png" alt="...">
+                <h2>{{ infoMostrar.titPubli }}</h2>
+                <p>{{ infoMostrar.txtPubli }}</p>
+                <img [src]="infoMostrar.imgPubli" alt="...">
 
 
             </div>

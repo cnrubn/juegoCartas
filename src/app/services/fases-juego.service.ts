@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Carta, Jugador } from '../interfaces/interfaces';
 import { JuegoServiciosService } from './juego-servicios.service';
+import { SecuenciaJuegoService } from './secuencia-juego.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,31 +15,25 @@ export class FasesJuegoService {
   siguienteNivel: boolean = false;
 
 
-  constructor( private sv: JuegoServiciosService ) { }
+  constructor( private sv: JuegoServiciosService,
+               private secuencia: SecuenciaJuegoService  ) { }
 
-
-  // inicioJuego(){
-
-    // this.cartasJugando = this.sv.paso1Size();
-
-    // console.log(this.cartasJugando)
-
-    // this.iniciadoJuego = true;
-
-
-    // return this.cartasJugando;
-
-    // return console.log('servicio');
-    
-  // }
   
   fase1_ObtenerCartas(){
+
+
+
     return this.sv.paso1Size();
+
+
+    
+    
   }
 
   fase2_Comprobación( num1: number, num2: number, cartas: Carta[] ){
 
     this.cartasJugando = cartas;
+
 
     
     const carta1: any = this.cartasJugando[ num1 ].id;
@@ -94,7 +89,11 @@ export class FasesJuegoService {
 
   fase3_NivelCompleto() {
 
-    const puntos: number = 100 - ( this.jugador.intentos * 5)
+    let puntos: number = 100 - ( this.jugador.intentos * 5)
+
+    if( puntos < 0 ){
+      puntos = 0;
+    }
 
     this.jugador.puntos = this.jugador.puntos + puntos; 
     this.jugador.intentos = 0; 
@@ -110,7 +109,8 @@ export class FasesJuegoService {
     }
 
 
-    console.log('ronda completa');
+
+
 
   } 
 

@@ -16,7 +16,7 @@ export interface Carta {
 
 
 export interface infoFases {
-    id: number;
+    id: string;
     tit: string;
     txt?: string;
     img?: string;

@@ -31,11 +31,46 @@ export class IntroJuegoComponent implements OnInit {
 
   ngOnInit(): void {
 
+    // console.log('this.infoMostrar');
+
     this.infoFases = this.info.infoFases;
 
+    this.jugador = this.sv.getJugadorLocalStorage();
 
-    this.infoMostrar = this.infoFases[0];
-    // console.log(this.infoMostrar);
+    if( this.jugador.nivel === 0 ){
+
+      this.infoMostrar = this.infoFases[0];
+
+    } else if( this.jugador.nivel > 0 && this.jugador.nivel <= 5 ) {
+
+      let nivel: string = 'n' + this.jugador.nivel;
+
+      for( let msg in this.infoFases ){
+        if( nivel === this.infoFases[msg].id ){
+          // console.log( ' msg', msg)
+          // console.log( 'objeto', this.infoFases[msg])
+          this.infoMostrar = this.infoFases[msg];
+
+          this.activaIntro = false;
+          this.activaReglas = false;
+          this.activaNiveles = true;
+          
+          
+        } 
+      }
+
+      
+    } else {
+      this.infoMostrar = this.infoFases[7];
+
+      this.activaIntro = false;
+      this.activaReglas = false;
+      this.activaNiveles = true;
+
+
+    }
+
+
 
 
   }
@@ -49,7 +84,7 @@ export class IntroJuegoComponent implements OnInit {
       return;
     }
 
-    this.jugador = this.sv.getJugadorLocalStorage();
+    // this.jugador = this.sv.getJugadorLocalStorage();
     this.jugador.nombre = nombre;
     this.sv.guardarJugadorLocalStorage();
 

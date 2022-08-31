@@ -27,4 +27,12 @@ export class SecuenciaJuegoService {
     // console.log(this.jugador);
     
   }
+
+
+
+
+  
+  
+  
+  
 }

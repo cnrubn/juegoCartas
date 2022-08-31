@@ -22,18 +22,10 @@ export class VisorComponent implements OnInit, DoCheck {
   @Output() reset = new EventEmitter<boolean>();
 
 
-  // @Output()  emisor = new EventEmitter<string>();
-
-
   constructor( private sv: JuegoServiciosService,
                private fasesService: FasesJuegoService ) { }
 
   ngOnInit(): void {
-
-    // this.jugador = this.sv.jugador;
-    // console.log(this.jugador)
-
-    // console.log( this.iniciadoJuego )
 
     if( localStorage.getItem( 'jugador' ) ){
       this.jugador = JSON.parse( localStorage.getItem( 'jugador' )! );
@@ -41,51 +33,22 @@ export class VisorComponent implements OnInit, DoCheck {
       this.jugador = this.sv.jugador;
     }
 
-    // this.sv.jugador.intentos = 0;
-    
-    
   }
 
 
   ngDoCheck() {
     
-    // console.log('entra');
-    
+    if( localStorage.getItem( 'jugador' ) ){
+      this.jugador = JSON.parse( localStorage.getItem( 'jugador' )! );
 
-      if( localStorage.getItem( 'jugador' ) ){
-        this.jugador = JSON.parse( localStorage.getItem( 'jugador' )! );
-
-
-
-      
-      }
-
-
-    
+    }
   }
   
   
 
   inicioJuego(){
-    // this.cartasJugando = this.fasesService.inicioJuego();
-
-    // return this.iniciadoJuego = true;
-
-    
-    // this.fasesService.inicioJuego();
-
-    // console.log('iniciado');
-    
-    // console.log(this.cartasJugando)
 
     this.iniciadoJuego.emit(true);
-
-
-
-
-
-    
-
     
   }
 
@@ -100,14 +63,8 @@ export class VisorComponent implements OnInit, DoCheck {
 
 
   restablecerJuego(){
-    // localStorage.removeItem('jugador');
-
 
     this.fasesService.fase_Restablecer();
-    
-    // this.sv.jugador.intentos = 0;
-
-    // return this.restablecer = true;
 
     this.reset.emit(true);
 

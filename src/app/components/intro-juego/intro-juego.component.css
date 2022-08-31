@@ -7,5 +7,36 @@
 .contenedor-ficha {
     border: 3px solid rgb(123, 220, 20);
     width: 90%;
-    height: 600px;
+    height: 800px;
+
+
+}
+
+
+/* FICHA NIVELES */
+
+.ficha-niveles {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.lado-izquierdo {
+    width: 60%;
+    background-color: darkorange;
+    overflow: hidden;
+    padding: 5px;
+
+}
+
+.lado-derecho {
+    width: 40%;
+    background-color: darkslategray;
+    overflow: hidden;
+    padding: 5px;
+
 }
