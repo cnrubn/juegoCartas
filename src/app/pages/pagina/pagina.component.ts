@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { JuegoServiciosService } from 'src/app/services/juego-servicios.service';
 
 @Component({
   selector: 'app-pagina',
@@ -11,10 +12,13 @@ export class PaginaComponent implements OnInit {
 
   emisor!: any;
 
-  constructor() { }
+  constructor( private sv: JuegoServiciosService ) { }
 
   ngOnInit(): void {
 
+    this.sv.getJugadorLocalStorage();
+
+    
     // console.log( this.emisor )
     
   }

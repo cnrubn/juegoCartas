@@ -30,10 +30,10 @@ export class TableroComponent implements OnInit, DoCheck, OnChanges {
 
   ngDoCheck(){
     // this.cartasJugando;
-    console.log( 'ngDoCheck', this.iniciadoJuego);
+    // console.log( 'ngDoCheck', this.iniciadoJuego);
 
     if( this.iniciadoJuego || this.completadoNivel ){
-      console.log('>>> EStoy dentro.')
+      // console.log('>>> EStoy dentro.')
     }
 
 
@@ -44,8 +44,8 @@ export class TableroComponent implements OnInit, DoCheck, OnChanges {
 
   ngOnChanges() {
 
-    console.log( 'this.iniciadoJuego', this.iniciadoJuego);
-    console.log( 'this.completadoNivel', this.completadoNivel);
+    // console.log( 'this.iniciadoJuego', this.iniciadoJuego);
+    // console.log( 'this.completadoNivel', this.completadoNivel);
 
     if( this.iniciadoJuego ){
       // console.log( 'Llamado fase 1')
@@ -60,7 +60,7 @@ export class TableroComponent implements OnInit, DoCheck, OnChanges {
 
     }
 
-    console.log(this.completadoNivel);
+    // console.log(this.completadoNivel);
 
 
   }
@@ -69,7 +69,7 @@ export class TableroComponent implements OnInit, DoCheck, OnChanges {
   completadoNivelEvent( event: boolean ){
 
     this.completadoNivel = event;
-    console.log( 'event', event)
+    // console.log( 'event', event)
 
     // this.nuevoNivel()
 
@@ -85,7 +85,7 @@ export class TableroComponent implements OnInit, DoCheck, OnChanges {
 
       this.iniciadoJuego = true;
 
-      console.log( 'cartasJugando', this.iniciadoJuego)
+      // console.log( 'cartasJugando', this.iniciadoJuego)
 
     // }
     

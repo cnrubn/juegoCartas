@@ -9,7 +9,7 @@ export class FasesJuegoService {
 
   cartasJugando: Carta[] = [];
   iniciadoJuego: boolean = false;
-  jugador!: Jugador;
+  jugador!: any;
 
   siguienteNivel: boolean = false;
 
@@ -44,9 +44,11 @@ export class FasesJuegoService {
     const carta1: any = this.cartasJugando[ num1 ].id;
     const carta2: any = this.cartasJugando[ num2 ].id;
 
-    this.jugador = this.sv.getJugador();
+    // this.jugador = this.sv.getJugador();
+
+    this.jugador = this.sv.getJugadorLocalStorage();
     
-    // console.log(this.jugador)
+    console.log( 'jugador::',this.jugador)
     // console.log(this.cartasJugando)
     // console.log({carta1,carta2})
 
@@ -76,12 +78,17 @@ export class FasesJuegoService {
       // console.log('¡Ohh, cartas distintas!')
 
       this.jugador.intentos++;
+
+      this.sv.guardarJugadorLocalStorage();
+
       
 
       return acierto;
 
       
     }
+
+
 
   }
 
@@ -92,6 +99,11 @@ export class FasesJuegoService {
     this.jugador.puntos = this.jugador.puntos + puntos; 
     this.jugador.intentos = 0; 
     this.jugador.nivel++;
+
+    console.log('this.jugador::', this.jugador)
+
+
+    this.sv.guardarJugadorLocalStorage();
     
     for( let carta of this.cartasJugando ){
         carta.clickado = false;
@@ -101,5 +113,20 @@ export class FasesJuegoService {
     // this.fase1_ObtenerCartas();
 
   } 
+
+  fase_Restablecer(){
+
+    console.log('restablecer')
+
+    this.sv.jugador = {
+      nombre: '',
+      puntos: 0,
+      intentos: 0,
+      nivel: 0
+    }
+
+    this.sv.guardarJugadorLocalStorage()
+
+  }
   
 }

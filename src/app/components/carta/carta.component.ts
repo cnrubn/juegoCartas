@@ -32,8 +32,8 @@ export class CartaComponent implements OnInit {
 
     
 
-    console.log( 'this.cartas',this.cartas );
-    console.log( 'this.arrayClickados',this.arrayClickados );
+    // console.log( 'this.cartas',this.cartas );
+    // console.log( 'this.arrayClickados',this.arrayClickados );
 
 
     // console.log( 'INICIO click1', this.click1);
@@ -96,7 +96,7 @@ export class CartaComponent implements OnInit {
     
     
     if( this.arrayClickados.length === this.cartas.length ){
-      console.log('completo')
+      // console.log('completo')
 
 
       

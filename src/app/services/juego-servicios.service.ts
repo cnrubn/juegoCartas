@@ -79,6 +79,13 @@ export class JuegoServiciosService {
   ]
 
   constructor() { 
+
+    this.getJugadorLocalStorage();
+
+    this.jugador.intentos = 0;
+
+    this.guardarJugadorLocalStorage();
+
     // this.paso1Size();
   }
 
@@ -86,11 +93,30 @@ export class JuegoServiciosService {
     return this.jugador;
   }
 
+  getJugadorLocalStorage(){
+    if( localStorage.getItem( 'jugador' ) ){
+      this.jugador = JSON.parse( localStorage.getItem( 'jugador' )! );
+    } 
+
+    console.log('jgd', this.jugador);
+
+    return this.jugador;
+  }
+
+  guardarJugadorLocalStorage() {
+    localStorage.setItem( 'jugador', JSON.stringify( this.jugador ) );
+
+    return this.jugador;
+  }
+
+
 
 
 
   paso1Size(){
     // Según el nivel de jugador hay 3 posibles tableros de juegos. Aquí se selecciona el nº de elementos que vamos a necesitar.
+
+
 
 
     let numCartas: number;
@@ -103,8 +129,8 @@ export class JuegoServiciosService {
       numCartas = 8;
     }
 
-    console.log( this.jugador );
-    console.log( 'numCartas', numCartas)
+    // console.log( this.jugador );
+    // console.log( 'numCartas', numCartas)
 
     return this.paso2Seleccionadas( numCartas );
   }
@@ -141,7 +167,7 @@ export class JuegoServiciosService {
       
     }
 
-    console.log( 'cartasSeleccionadas', cartasSeleccionadas)
+    // console.log( 'cartasSeleccionadas', cartasSeleccionadas)
 
     return this.paso3CompletarObjeto( cartasSeleccionadas );
 
@@ -158,14 +184,14 @@ export class JuegoServiciosService {
       [array[i], array[j]] = [array[j], array[i]];
     }
 
-    console.log(array)
-    console.log( '>>this.cartasRonda 1', this.cartasRonda )
+    // console.log(array)
+    // console.log( '>>this.cartasRonda 1', this.cartasRonda )
 
 
     // Con el array completo ahora falta convertirlo en la colección de objetos con los datos de cada carta.
     this.cartasRonda = [];
 
-    console.log( '>>this.cartasRonda 2', this.cartasRonda )
+    // console.log( '>>this.cartasRonda 2', this.cartasRonda )
 
     
     for( let carta of array){
@@ -175,7 +201,7 @@ export class JuegoServiciosService {
 
 
 
-    console.log( '>>this.cartasRonda', this.cartasRonda )
+    // console.log( '>>this.cartasRonda', this.cartasRonda )
 
 
 
