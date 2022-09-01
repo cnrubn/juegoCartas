@@ -123,10 +123,10 @@ export class JuegoServiciosService {
     
     if( this.jugador.nivel <= 1 ){
       numCartas = 6;
-    } else if( this.jugador.nivel === 4 ){
-      numCartas = 10;
-    } else {
+    } else if( this.jugador.nivel > 1 && this.jugador.nivel <= 4 ){
       numCartas = 8;
+    } else {
+      numCartas = 10;
     }
 
     // console.log( this.jugador );

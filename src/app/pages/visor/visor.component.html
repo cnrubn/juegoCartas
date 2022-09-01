@@ -2,34 +2,68 @@
     
 
     <div class="contenedor-visor-flotante">
-        <div    class="contenedor-visor-juego"
+
+
+        <div    class="contenedor-visor-juego d-flex flex-column"
                 *ngIf="visorActivo else pregunta"
                 >
-            <p>visor works!</p>
-            <pre>{{ jugador | json }}</pre>
-            <button (click)="inicioJuego()"
-        
-                    >
-                Jugar
-            </button>
-            <button (click)="preRestablecerJuego()"
-        
-                    >
-                Restablecer
-            </button>
+
+            <div class="info-jugador flex-grow-1">
+
+                <h3>{{ jugador.nombre }}</h3>
+                <img src="{{ jugador.nivel | visorLogros }}" alt="{{ jugador.nivel | visorFase }}">
+                <p  class="nivel-jugador">{{ jugador.nivel | visorFase }}</p>
+                <p  class="puntos">{{ jugador.puntos }}</p>
+                <p  class="fuerza">Puntos de fuerza</p>
+                <hr>
+                <p  class="intentos">Intentos: {{ jugador.intentos }}</p>
+                
+            </div>
+
+
+            <div class="botonera d-flex flex-column align-items-center">
+                <button (click)="inicioJuego()"
+                        class="jugar"
+                        >
+                    Jugar
+                </button>
+                <button (click)="preRestablecerJuego()"
+                        class="peligro"
+                        >
+                    Restablecer
+                </button>
+            </div>
+
+
         </div>
+
+        <!-- ADVERTENCIA RESTABLECER JUEGO -->
         <ng-template    #pregunta>
-            <h2>Advertencia</h2>
-            <p>Al pulsar restablecer perderá todo el progreso y el juego se iniciará.</p>
-            <button (click)="cancelar()"
-                    >
-                        Cancelar
-            </button>
-            <button (click)="restablecerJuego()"
-                    >
-                        Restablecer
-            </button>
+
+
+            <div class="contenedor-advertencia d-flex flex-column align-items-center justify-content-center">
+
+                <h2>¡Cuidado!</h2>
+                <p>Al pulsar restablecer perderá todo el progreso y el juego se reiniciará.</p>
+                <div class="botonera d-flex flex-column align-items-center">
+                    <button (click)="cancelar()"
+                            class="jugar"
+                            >
+                                Cancelar
+                    </button>
+                    <button (click)="restablecerJuego()"
+                            class="peligro"
+                            >
+                                Restablecer
+                    </button>
+                </div>
+
+            </div>
+
+
         </ng-template>
+
+
     </div>
     
     

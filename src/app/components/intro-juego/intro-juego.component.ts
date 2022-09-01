@@ -61,7 +61,7 @@ export class IntroJuegoComponent implements OnInit {
 
       
     } else {
-      this.infoMostrar = this.infoFases[7];
+      this.infoMostrar = this.infoFases[8];
 
       this.activaIntro = false;
       this.activaReglas = false;
@@ -79,7 +79,7 @@ export class IntroJuegoComponent implements OnInit {
 
     this.nombreIncorrecto = false;
 
-    if( nombre.length < 3 ){
+    if( nombre.length < 3 || nombre.length > 10 ){
       this.nombreIncorrecto = true;
       return;
     }

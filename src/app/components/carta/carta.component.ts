@@ -12,6 +12,8 @@ export class CartaComponent implements OnInit {
   @Input() cartas!: Carta[];
   arrayRef: number[] = [];
 
+  tiempoError: boolean = false;
+
   click1: number = -1;
   click2: number = -1;
 
@@ -63,7 +65,16 @@ export class CartaComponent implements OnInit {
     }
 
 
+
+
     // INTENTO FALLIDO
+
+
+    if( !this.respuestaServicio ){
+      this.tiempoError = true;
+    }
+    
+    
     setTimeout(() => {
 
       if( !this.respuestaServicio ){
@@ -71,7 +82,8 @@ export class CartaComponent implements OnInit {
         this.click2 = -1;
   
         // console.log('reset');
-  
+        this.tiempoError = false;
+        
       }
       
     }, 2000 );

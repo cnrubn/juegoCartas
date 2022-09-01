@@ -14,7 +14,7 @@
                 <input  type="text"
                         #nombre
                         >
-                <p  *ngIf="nombreIncorrecto">Introduce un nombre de al menos 3 caracteres.</p>
+                <p  *ngIf="nombreIncorrecto">Ehh! no te pases, escribe un nombre entre 3 y 10 caracteres, gracias.</p>
                 <br>
 
 
@@ -53,22 +53,43 @@
                 *ngIf="activaNiveles"
                 >
             
-            <div class="lado-izquierdo">
+            <div class="lado-izquierdo d-flex flex-column align-items-center justify-content-start">
 
-                <h2>{{ infoMostrar.tit }}</h2>
-                <p>{{ infoMostrar.txt }}</p>
-                <img [src]="infoMostrar.img" alt="...">
+                <div class="contenido flex-grow-1">
+                    <h2>{{ infoMostrar.tit }}</h2>
+
+
+                    <div class="contenedor-img">
+                        <img [src]="infoMostrar.img" alt="...">
+                    </div>
+
+
+                    <p>{{ infoMostrar.txt }}</p>
+                </div>
+
                 <button (click)="siguienteReglas()">
                     Siguiente
                 </button>
                 
             </div>
             
-            <div class="lado-derecho">
+            <div class="lado-derecho d-flex flex-column align-items-center justify-content-start">
 
-                <h2>{{ infoMostrar.titPubli }}</h2>
-                <p>{{ infoMostrar.txtPubli }}</p>
-                <img [src]="infoMostrar.imgPubli" alt="...">
+                <div class="contenido flex-grow-1">
+                    <h2>{{ infoMostrar.titPubli }}</h2>
+                    <p>{{ infoMostrar.txtPubli }}</p>
+                    <img [src]="infoMostrar.imgPubli" alt="...">
+                </div>
+
+
+                <a  [href]="infoMostrar.urlPubli"
+                    target="_blank"
+                    >
+                        <button>
+                            Visitar
+                        </button>
+                </a>
+
 
 
             </div>

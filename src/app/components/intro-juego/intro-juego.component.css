@@ -7,11 +7,14 @@
 .contenedor-ficha {
     border: 15px solid #E8E8C9;
     width: 90%;
+    max-width: 1200px;
     height: 800px;
     border-radius: 45px;
     background-color: #000;
     color: #fff;
     overflow: hidden;
+
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 
@@ -28,6 +31,7 @@
 .contenido-ficha h2 {
     font-size: 75px;
     margin-bottom: 40px;
+    text-align: center;
 }
 
 .contenido-ficha input {
@@ -38,6 +42,7 @@
     border: none;
     border-bottom: 2px solid #E8E8C9;
     margin-bottom: 45px;
+    text-align: center;
 }
 
 .contenido-ficha p {
@@ -58,7 +63,7 @@
 /* FICHA NIVELES */
 
 .ficha-niveles {
-    background-color: #fff;
+    /* background-color: #fff; */
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -69,16 +74,77 @@
 
 .lado-izquierdo {
     width: 60%;
-    background-color: darkorange;
+    /* background-color: darkorange; */
     overflow: hidden;
-    padding: 5px;
+    padding: 25px;
 
+    height: 100%;
+}
+
+.lado-izquierdo h2 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 40px;
+}
+
+.lado-izquierdo .contenedor-img {
+    /* background-color: #fff; */
+    text-align: center;
+    margin: 40px;
+}
+
+.lado-izquierdo img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 999px;
+}
+
+.lado-izquierdo button {
+    margin-bottom: 50px;
+}
+
+.lado-izquierdo p {
+    font-size: 30px;
+    text-align: center;
 }
 
 .lado-derecho {
     width: 40%;
-    background-color: darkslategray;
+    background-color: #242d3336;
     overflow: hidden;
-    padding: 5px;
+    padding: 25px;
+    height: 100%;
+
 
 }
+
+.lado-derecho h2 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 40px;
+}
+
+.lado-derecho p {
+    font-size: 30px;
+    text-align: center;
+    margin: 40px auto;
+}
+
+.lado-derecho img {
+    width: 100%;
+
+}
+
+.lado-derecho button {
+    margin-bottom: 50px;
+    background-color: #000;
+    box-shadow: none;
+    color: #ddd;
+    border: 1px solid #ddd;
+}
+
+.lado-derecho button:hover {
+    border: 1px solid #FF3366;
+    color: #FF3366;
+}
+

@@ -23,6 +23,7 @@ export interface infoFases {
     titPubli?: string;
     txtPubli?: string;
     imgPubli?: string;
+    urlPubli?: string;
     activo?: boolean;
 
 }

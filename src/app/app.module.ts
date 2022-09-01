@@ -9,6 +9,8 @@ import { VisorComponent } from './pages/visor/visor.component';
 import { TableroComponent } from './pages/tablero/tablero.component';
 import { CartaComponent } from './components/carta/carta.component';
 import { IntroJuegoComponent } from './components/intro-juego/intro-juego.component';
+import { VisorLogrosPipe } from './pipes/visor-logros.pipe';
+import { VisorFasePipe } from './pipes/visor-fase.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { IntroJuegoComponent } from './components/intro-juego/intro-juego.compon
     VisorComponent,
     TableroComponent,
     CartaComponent,
-    IntroJuegoComponent
+    IntroJuegoComponent,
+    VisorLogrosPipe,
+    VisorFasePipe
   ],
   imports: [
     BrowserModule,

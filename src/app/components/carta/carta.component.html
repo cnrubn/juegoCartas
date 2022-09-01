@@ -1,16 +1,39 @@
-<div    class="contenedor-carta"
-        *ngFor="let carta of cartas, let i = index"
-        [ngClass]="{ 'activo': i === click1 || i === click2 || carta.clickado,
-                     'clickado': carta.clickado  }"
-        (click)="cartaSeleccionada( carta, i )"
-        >
+<div class="contenedor-superior-cartas">
 
-    <img    [src]="carta.img" 
-            [alt]="carta.nombre"
-            class="img"
-            >
 
-     <p>{{ carta.id }}</p>
+        <div    class="contenedor-carta d-flex flex-wrap justify-content-center align-content-center"
+                *ngFor="let carta of cartas, let i = index"
+                >
+
+                <div    class="contorno-carta"
+                        (click)="cartaSeleccionada( carta, i )"
+                        [ngClass]="{    'activo': i === click1 || i === click2 || carta.clickado,
+                                        'clickado': carta.clickado,
+                                        'error': tiempoError && i === click1|| i === click2 }"
+                        >
+                        <p>{{ carta.id }}</p>
+
+                        <img    src="assets/img-logros/logo-5.jpg"
+                        alt="..."
+                        class="img"
+                        *ngIf="i === click1 || i === click2 || carta.clickado; else frontal"
+
+                
+                        >
+                        
+
+
+                        <ng-template    #frontal>
+
+                                <img    [src]="carta.img"
+                                [alt]="carta.nombre"
+                                class="img"
+                                >
+
+                        </ng-template>
+                </div>
         
+        </div>
+
         
 </div>

@@ -14,3 +14,23 @@
     background-size: cover; 
 
 }
+
+
+.visor {
+    width: 30%;
+}
+
+.tablero {
+    /* height: 90vh; */
+    /* background-color: azure; */
+    /* width: 70%; */
+
+
+    /* overflow: hidden;  */
+
+}
+
+app-tablero {
+    /* height: 50vh;
+    background-color: cadetblue; */
+}

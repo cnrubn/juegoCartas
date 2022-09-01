@@ -1,29 +1,90 @@
+.contenedor-superior-cartas {
+    /* background-color: orange; */
+    width: 95%;
+    height: 95vh;
+
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 5px;
+
+    /* grid-template-rows: 1 1 1 1 ; */
+    /* grid-auto-rows: minmax(100px, auto); */
+
+    /* background-color: #fff; */
+    /* margin: 5px; */
+    padding: 5px;
+}
+
 .contenedor-carta {
+    /* background-color: #fff; */
+    /* border: 1px solid #000; */
+    /* border-radius: 5px; */
+    overflow: hidden;
+    /* cursor: pointer; */
+
+    /* max-width: 100%; */
+    /* max-height: 100%; */
+
+    /* margin: 1%; */
+
+    /* background-color: rgb(206, 252, 212); */
+
+    /* grid-column: 1; */
+    /* grid-row: 1; */
+
+    /* height: 100px; */
+    /* height: 95vh; */
+
+    text-align: center;
+}
+
+.contorno-carta {
     background-color: #fff;
-    border: 1px solid #000;
-    border-radius: 5px;
+
     overflow: hidden;
     cursor: pointer;
 
-    max-width: 20%;
-    /* height: 10vh; */
+    border-radius: 5px;
 
-    margin: 2%;
+    border: 4px solid #E8E8C9;
 
-    background-color: rgb(255, 79, 79);
+    max-height: 100%;
+    /* width: 100%; */
+    max-width: 210px;
+
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
 
 }
 
 .img {
     width: 100%;
+    /* height: 100%; */
+
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+
+
 }
 
 
 /* CARTAS BOCA ARRIBA */
 .activo {
-    background-color: rgb(127, 255, 150);
+    border: 4px solid #0059ff;
+
+    /* background-color: rgb(127, 255, 150); */
 }
 
 .clickado{
-    background-color: darkorange;
+    border: 4px solid #00ff77;
+    /* background-color: darkorange; */
+}
+
+.error{
+    border: 4px solid #ff0000;
+    /* background-color: darkorange; */
 }
