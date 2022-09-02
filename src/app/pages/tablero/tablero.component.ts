@@ -10,7 +10,7 @@ import { JuegoServiciosService } from 'src/app/services/juego-servicios.service'
 })
 export class TableroComponent implements OnInit, OnChanges {
 
-  cartasJugando!: Carta[];
+  cartasJugando: Carta[] = [];
   @Input() iniciadoJuego!: boolean;
 
   completadoNivel: boolean = false;
@@ -31,8 +31,7 @@ export class TableroComponent implements OnInit, OnChanges {
     if( this.iniciadoJuego ){
 
       this.cartasJugando = this.fasesServicios.fase1_ObtenerCartas();
-
-      // console.log( this.cartasJugando);
+       
 
       if( this.iniciadoJuego ){
 
@@ -42,17 +41,19 @@ export class TableroComponent implements OnInit, OnChanges {
         
   
         setTimeout(() => {
+
     
           for( let carta of this.cartasJugando ){
             carta.clickado = false;
           }
           
-        }, 2000 );
+        }, 5000 );
 
         this.iniciadoJuego = false;
 
 
       }
+
 
 
       this.iniciadoJuego = false;

@@ -11,7 +11,7 @@ export class VisorFasePipe implements PipeTransform {
 
   constructor( private info: InfoFasesService ){
     this.infoArray = this.info.infoFases;
-    console.log(this.infoArray);
+    // console.log(this.infoArray);
   }
 
   transform(value: Jugador ) {

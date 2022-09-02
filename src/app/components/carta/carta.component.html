@@ -1,4 +1,6 @@
-<div class="contenedor-superior-cartas">
+<div    class="contenedor-superior-cartas"
+        *ngIf="cartas.length > 0"
+        >
 
 
         <div    class="contenedor-carta d-flex flex-wrap justify-content-center align-content-center"
@@ -13,21 +15,22 @@
                         >
                         <p>{{ carta.id }}</p>
 
-                        <img    src="assets/img-logros/logo-5.jpg"
-                        alt="..."
+
+                        
+                        <img    [src]="carta.img"
+                        [alt]="carta.nombre"
                         class="img"
                         *ngIf="i === click1 || i === click2 || carta.clickado; else frontal"
-
-                
                         >
-                        
-
 
                         <ng-template    #frontal>
 
-                                <img    [src]="carta.img"
-                                [alt]="carta.nombre"
+                                <img    src="assets/img/placeholder11.png"
+                                alt="..."
                                 class="img"
+                                
+        
+                        
                                 >
 
                         </ng-template>

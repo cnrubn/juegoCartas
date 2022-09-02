@@ -39,21 +39,10 @@ export class PaginaComponent implements OnInit {
 
   iniciadoJuegoVisor( event: boolean ){
 
+    // console.log('iniciadoJuegoVisor',event)
+
     this.iniciadoJuego = event;
-
-    // console.log(this.iniciadoJuego);
-    // console.log(this.activo);
-
-    // setTimeout(() => {
-    //   this.iniciadoJuego = false;
-
-
-      
-    // }, 5000 );
-
-
-
-
+    
 
   }
 
@@ -68,9 +57,13 @@ export class PaginaComponent implements OnInit {
   
   terminadoRonda( event: any ){
 
-    console.log(event);
+    // console.log('terminadoRonda',event);
+    // console.log('iniciadoJuegoVisor',this.iniciadoJuego)
+
 
     this.activo = false;
+
+    this.iniciadoJuego = false;
 
 
   }

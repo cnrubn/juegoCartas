@@ -18,62 +18,62 @@ export class JuegoServiciosService {
   cartas: Carta[] = [
     {
       id: 1,
-      nombre: 'Goku',
-      img: 'assets/img/placeholder.png',
+      nombre: 'Freezer',
+      img: 'assets/img-cartas/c1.jpg',
       clickado: false
     },
     {
       id: 2,
-      nombre: 'Goku',
-      img: 'assets/img/placeholder.png',
+      nombre: 'Vegeta',
+      img: 'assets/img-cartas/c2.jpg',
       clickado: false
     },
     {
       id: 3,
-      nombre: 'Goku',
-      img: 'assets/img/placeholder.png',
+      nombre: 'Célula',
+      img: 'assets/img-cartas/c3.jpg',
       clickado: false
     },
     {
       id: 4,
-      nombre: 'Goku',
-      img: 'assets/img/placeholder.png',
+      nombre: 'Mr. Satán',
+      img: 'assets/img-cartas/c4.jpg',
       clickado: false
     },
     {
       id: 5,
       nombre: 'Goku',
-      img: 'assets/img/placeholder.png',
+      img: 'assets/img-cartas/c5.png',
       clickado: false
     },
     {
       id: 6,
-      nombre: 'Goku',
-      img: 'assets/img/placeholder.png',
+      nombre: 'Piccolo',
+      img: 'assets/img-cartas/c6.jpg',
       clickado: false
     },
     {
       id: 7,
-      nombre: 'Goku',
-      img: 'assets/img/placeholder.png',
+      nombre: 'Boo',
+      img: 'assets/img-cartas/c7.jpg',
       clickado: false
     },
     {
       id: 8,
-      nombre: 'Goku',
-      img: 'assets/img/placeholder.png',
+      nombre: 'Krilin',
+      img: 'assets/img-cartas/c8.jpg',
       clickado: false
     },
     {
       id: 9,
       nombre: 'Goku',
-      img: 'assets/img/placeholder.png',
+      img: 'assets/img-cartas/c9.jpg',
       clickado: false
     },
     {
       id: 10,
-      nombre: 'Goku',
-      img: 'assets/img/placeholder.png',
+      nombre: 'Gohan',
+      img: 'assets/img-cartas/c10.jpg',
       clickado: false
     },
   ]

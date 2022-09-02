@@ -48,6 +48,9 @@ export class VisorComponent implements OnInit, DoCheck {
 
   inicioJuego(){
 
+    // console.log(this.iniciadoJuego)
+
+
     this.iniciadoJuego.emit(true);
     
   }

@@ -9,7 +9,7 @@ import { FasesJuegoService } from 'src/app/services/fases-juego.service';
 })
 export class CartaComponent implements OnInit {
 
-  @Input() cartas!: Carta[];
+  @Input() cartas: Carta[] = [];
   arrayRef: number[] = [];
 
   tiempoError: boolean = false;
@@ -32,72 +32,55 @@ export class CartaComponent implements OnInit {
 
   cartaSeleccionada( carta: Carta, i: number ){
 
-    
-
-    // console.log( 'this.cartas',this.cartas );
-    // console.log( 'this.arrayClickados',this.arrayClickados );
-
-
-    // console.log( 'INICIO click1', this.click1);
-    // console.log( 'INICIO click2', this.click2);
-
     for( let num of this.arrayClickados ){
       if( num === i || num === this.click2 ){
         return;
       }
     }
-    
-    
 
+
+    
+    
+    // Asignación valores a propiedades, para luego comparar.
     if( this.click1 === -1 && this.click2 === -1 ){
       this.click1 = i;
-
-      // console.log('asignación 1');
+      console.log('primera opci')
       return;
 
-    } else if( this.click1 !== -1 && this.click2 === -1 ) {
+    } else if( this.click1 !== -1 && this.click2 === -1 && this.click1 !== i  ) {
       this.click2 = i;
-
-      this.respuestaServicio = this.fasesServicios.fase2_Comprobación( this.click1, this.click2, this.cartas );
 
     } else {
       return;
     }
 
+    // Acierto.
+    if( this.click1 !== -1 && this.click2 !== -1 ){
+      this.respuestaServicio = this.fasesServicios.fase2_Comprobación( this.click1, this.click2, this.cartas );
+    }
 
 
 
     // INTENTO FALLIDO
-
-
     if( !this.respuestaServicio ){
       this.tiempoError = true;
     }
-    
     
     setTimeout(() => {
 
       if( !this.respuestaServicio ){
         this.click1 = -1;
         this.click2 = -1;
-  
-        // console.log('reset');
+
         this.tiempoError = false;
-        
       }
       
-    }, 2000 );
+    }, 1500 );
 
-    // INTENTO ACERTADO
-
+    // INTENTO ACERTADO. Preparación array con cartas acertadas.
     if( this.respuestaServicio ){
-      // console.log('>> Éxito');
-      // console.log(this.click1);
-      // console.log(this.click2);
 
       this.arrayClickados.push( this.click1, this.click2)
-
-      // console.log(this.arrayClickados);
 
       this.click1 = -1;
       this.click2 = -1;
@@ -106,17 +89,20 @@ export class CartaComponent implements OnInit {
     
 
     
-    
+    // Ronda completa. Reset de propiedades y siguiente pantalla.
     if( this.arrayClickados.length === this.cartas.length ){
-      // console.log('completo')
 
 
+      setTimeout(() => {
+
+        this.arrayClickados = [];
+        this.cartas = [];
+        
+        this.completadoNivel.emit(true);
+        this.fasesServicios.fase3_NivelCompleto();
+        
+      }, 1200 );
       
-      this.arrayClickados = [];
-      this.cartas = [];
-      
-      this.completadoNivel.emit(true);
-      this.fasesServicios.fase3_NivelCompleto();
       
     }
 

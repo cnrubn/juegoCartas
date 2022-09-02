@@ -21,13 +21,8 @@ export class FasesJuegoService {
   
   fase1_ObtenerCartas(){
 
-
-
     return this.sv.paso1Size();
 
-
-    
-    
   }
 
   fase2_Comprobación( num1: number, num2: number, cartas: Carta[] ){
@@ -35,28 +30,17 @@ export class FasesJuegoService {
     this.cartasJugando = cartas;
 
 
-    
     const carta1: any = this.cartasJugando[ num1 ].id;
     const carta2: any = this.cartasJugando[ num2 ].id;
 
-    // this.jugador = this.sv.getJugador();
 
     this.jugador = this.sv.getJugadorLocalStorage();
-    
-    // console.log( 'jugador::',this.jugador)
-    // console.log(this.cartasJugando)
-    // console.log({carta1,carta2})
-
 
     // COMPROBACIONES
 
     let acierto: boolean = false;
 
     if( carta1 === carta2 ){
-      // console.log('¡Genial, cartas iguales!')
-
-
-      
 
       for( let carta of this.cartasJugando ){
         if( carta1 === carta.id ){
@@ -64,13 +48,9 @@ export class FasesJuegoService {
         }
       }
 
-      // console.log(this.cartasJugando);
-
-      
       return acierto = true;
 
     } else {
-      // console.log('¡Ohh, cartas distintas!')
 
       this.jugador.intentos++;
 
