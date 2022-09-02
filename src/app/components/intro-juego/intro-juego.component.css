@@ -59,6 +59,41 @@
 }
 
 
+/* FICHA REGLAS */
+
+.ficha-total {
+    margin: 40px;
+
+}
+
+.ficha-total h2 {
+    /* text-align: center; */
+    /* margin-top: 20px; */
+    font-size: 40px;
+}
+
+.ficha-total .contenedor-reglas {
+    margin: 30px 0;
+    font-size: 30px;
+
+
+    max-height: 465px;
+    /* background-color: rgb(172, 161, 161); */
+
+
+    overflow: scroll;
+    scrollbar-width: thin;
+    /* scrollbar-color: blue orange; */
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+}
+
+.ficha-total li {
+    list-style: square;
+}
+
+
 
 /* FICHA NIVELES */
 
@@ -147,4 +182,6 @@
     border: 1px solid #FF3366;
     color: #FF3366;
 }
+
+
 

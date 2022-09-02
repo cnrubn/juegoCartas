@@ -1,6 +1,27 @@
-<div class="contenedor-footer">
+<div class="contenedor-footer d-flex flex-wrap justify-content-evenly align-items-center">
 
-    <p>footer works!</p>
+    <div class="bloque-txt">
+        <h3>Rubén Carrión | Desarrollador Web</h3>
+    </div>
+
+    <div class="bloque-redes">
+
+        <ul class="d-flex flex-wrap justify-content-evenly align-items-center">
+            
+            <li *ngFor="let red of arrayRedes">
+                <a  [href]="red.url"
+                    target="_blank"
+                    >
+
+                    <span   [innerHTML]="red.logo"></span>
+                    <span>{{ red.nombre }}</span>
+                    
+                </a>
+            </li>
+
+        </ul>
+        
+    </div>
 
 </div>
 

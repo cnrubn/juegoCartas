@@ -11,6 +11,7 @@
             
             <div class="contenido-ficha">
                 <h2>{{ infoMostrar.tit }}</h2>
+
                 <input  type="text"
                         #nombre
                         >
@@ -39,11 +40,21 @@
                 >
             
             <h2>{{ infoMostrar.tit }}</h2>
-            <div>{{ infoMostrar.txt }}</div>
-            <img [src]="infoMostrar.img" alt="...">
-            <button (click)="siguienteReglas()">
-                Siguiente
-            </button>
+
+            <div    [innerHTML]="infoMostrar.txt"
+                    class="contenedor-reglas"
+                    >
+            </div>
+
+
+            <div class="contenedor-boton d-flex justify-content-center align-items-center">
+                <button (click)="siguienteReglas()">
+                    Siguiente
+                </button>
+            </div>
+
+
+
 
         </div>
         

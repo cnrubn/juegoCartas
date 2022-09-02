@@ -28,3 +28,9 @@ export interface infoFases {
 
 }
 
+export interface Redes {
+    nombre: string;
+    logo: string;
+    url: string;
+}
+

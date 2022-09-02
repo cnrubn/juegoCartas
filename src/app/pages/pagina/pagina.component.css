@@ -13,11 +13,20 @@
     background-repeat: no-repeat; 
     background-size: cover; 
 
+    
+}
+
+
+.contenedor-area-juego {
+    max-width: 1800px;
+    /* background-color: #fff; */
+    margin: 0 auto;
 }
 
 
 .visor {
     width: 30%;
+    max-width: 400px;
 }
 
 .tablero {
@@ -30,7 +39,3 @@
 
 }
 
-app-tablero {
-    /* height: 50vh;
-    background-color: cadetblue; */
-}

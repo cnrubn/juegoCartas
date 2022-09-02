@@ -13,8 +13,14 @@ export class InfoFasesService {
     },
     {
       id: 'reglas',
-      tit: 'Reglas de juego...',
-      txt: `<div><p>txt</p><p>txt</p></div>`,
+      tit: 'Instrucciones de juego...',
+      txt: `<ul>
+              <li>Ya no hay vuelta atrás, es momento de entrenar para ser un Super Saiyan.</li>
+              <li>Pulsa el botón "Jugar" en la siguiente pantalla para iniciar el juego.</li>
+              <li>El objetivo es identificar las parejas de cartas en el menor número de intentos posibles. Cuanto menos intentos necesites mayor fuerza alcanzarás.</li>
+              <li>Muy atento al pulsar "Jugar", dispondrás de tan solo unos pocos segundos para memorizar la posición de todas las cartas.</li>
+              <li>Adelante. ¿Eres capaz de hacer un perfecto?</li>
+            </ul>`,
       img: 'assets/img/placeholder.png'
     },
     {

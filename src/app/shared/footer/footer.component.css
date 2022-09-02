@@ -1,5 +1,45 @@
 .contenedor-footer {
     background-color: #000;
-    color: #fff;
-    height: 5vh;
+    color: #ccc;
+    min-height: 5vh;
 }
+
+.bloque-txt {
+    /* background-cdolor: antiquewhite; */
+
+}
+
+.bloque-txt h3 {
+    font-size: 15px;
+    text-align: center;
+}
+
+.bloque-redes {
+    font-size: 15px;
+    margin-top: 10px;
+    /* background-color: #ccc; */
+
+}
+
+.bloque-redes ul {
+    list-style: none;
+}
+
+.bloque-redes ul li a {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.bloque-redes ul li a span {
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+
+.bloque-redes ul li:hover a {
+    color: #fff;
+    
+}
+
+
