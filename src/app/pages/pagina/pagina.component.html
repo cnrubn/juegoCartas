@@ -4,33 +4,28 @@
 
     <div class="contenedor-area-juego">
 
-
         <div    class="contenedor-info"
                 *ngIf="!activo"
                 >
                     <app-intro-juego    (siguienteEtapa)="iniciadoJuegoReglas( $event )"></app-intro-juego>
         </div>
     
-    
-
         <div    class="contenedor-juego"
-            *ngIf="activo"
-            >
+                *ngIf="activo"
+                >
 
             <div class="row">
             
                 <div class="col-3 col-sm-4 visor">
                     <app-visor  (iniciadoJuego)="iniciadoJuegoVisor( $event )"
-                    (reset)="restablecerJuego( $event )"
-            
-                    >
+                                (reset)="restablecerJuego( $event )"
+                                >
                     </app-visor>
             
                 </div>
                 <div class="tablero col ">
                     <app-tablero    [iniciadoJuego]="iniciadoJuego"
                                     (testigoNivel)="terminadoRonda( $event )"
-            
                                     >
                     </app-tablero>
             

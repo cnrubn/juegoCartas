@@ -22,12 +22,4 @@ export class SecuenciaJuegoService {
     }
     
   }
-
-
-
-
-  
-  
-  
-  
 }

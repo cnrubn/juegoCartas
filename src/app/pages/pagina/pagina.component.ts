@@ -12,18 +12,11 @@ import { SecuenciaJuegoService } from 'src/app/services/secuencia-juego.service'
 export class PaginaComponent implements OnInit {
 
   iniciadoJuego!: boolean;
-
   reset!: boolean;
-
   emisor!: any;
-
   activo: boolean = false;
-
   testigoRonda: any;
-
   jugador!: Jugador;
-
-
 
 
   constructor( private sv: JuegoServiciosService,
@@ -39,11 +32,8 @@ export class PaginaComponent implements OnInit {
 
   iniciadoJuegoVisor( event: boolean ){
 
-    // console.log('iniciadoJuegoVisor',event)
-
     this.iniciadoJuego = event;
     
-
   }
 
   iniciadoJuegoReglas( event: any ){
@@ -57,15 +47,8 @@ export class PaginaComponent implements OnInit {
   
   terminadoRonda( event: any ){
 
-    // console.log('terminadoRonda',event);
-    // console.log('iniciadoJuegoVisor',this.iniciadoJuego)
-
-
     this.activo = false;
-
     this.iniciadoJuego = false;
-
-
   }
 
 

@@ -10,14 +10,13 @@ import { JuegoServiciosService } from 'src/app/services/juego-servicios.service'
 })
 export class TableroComponent implements OnInit, OnChanges {
 
-  cartasJugando: Carta[] = [];
   @Input() iniciadoJuego!: boolean;
+  
+  @Output() testigoNivel = new EventEmitter<boolean>();
 
+  cartasJugando: Carta[] = [];
   completadoNivel: boolean = false;
 
-
-  @Output() testigoNivel = new EventEmitter<boolean>();
-  
 
   constructor( private sv: JuegoServiciosService,
                private fasesServicios: FasesJuegoService ) {}
@@ -27,11 +26,9 @@ export class TableroComponent implements OnInit, OnChanges {
 
   ngOnChanges() {
 
-
     if( this.iniciadoJuego ){
 
       this.cartasJugando = this.fasesServicios.fase1_ObtenerCartas();
-       
 
       if( this.iniciadoJuego ){
 
@@ -39,10 +36,8 @@ export class TableroComponent implements OnInit, OnChanges {
           carta.clickado = true;
         }
         
-  
         setTimeout(() => {
 
-    
           for( let carta of this.cartasJugando ){
             carta.clickado = false;
           }
@@ -51,14 +46,9 @@ export class TableroComponent implements OnInit, OnChanges {
 
         this.iniciadoJuego = false;
 
-
       }
 
-
-
       this.iniciadoJuego = false;
-      
-
     }
 
   }
@@ -77,8 +67,4 @@ export class TableroComponent implements OnInit, OnChanges {
     this.testigoNivel.emit(true);
 
   }
-
-
-
-
 }

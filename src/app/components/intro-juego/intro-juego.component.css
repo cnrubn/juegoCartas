@@ -1,7 +1,6 @@
 .contenedor-principal {
-    /* border: 3px solid crimson; */
     width: 100%;
-    height: 100vh;
+    height: 95vh;
 }
 
 .contenedor-ficha {
@@ -13,12 +12,8 @@
     background-color: #000;
     color: #fff;
     overflow: hidden;
-
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
-
-
-
 
 
 /* FICHA INTRO */
@@ -48,27 +43,21 @@
 .contenido-ficha p {
     font-size: 25px;
     opacity: 45%;
-    
 }
 
 .contenido-ficha button {
     border-radius: 90px;
     font-size: 45px;
     padding: 20px 50px;
-
 }
 
 
 /* FICHA REGLAS */
-
 .ficha-total {
     margin: 40px;
-
 }
 
 .ficha-total h2 {
-    /* text-align: center; */
-    /* margin-top: 20px; */
     font-size: 40px;
 }
 
@@ -76,14 +65,10 @@
     margin: 30px 0;
     font-size: 30px;
 
-
     max-height: 465px;
-    /* background-color: rgb(172, 161, 161); */
-
 
     overflow: scroll;
     scrollbar-width: thin;
-    /* scrollbar-color: blue orange; */
     overflow-y: auto;
     overflow-x: hidden;
     scrollbar-width: thin;
@@ -98,7 +83,6 @@
 /* FICHA NIVELES */
 
 .ficha-niveles {
-    /* background-color: #fff; */
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -109,10 +93,8 @@
 
 .lado-izquierdo {
     width: 60%;
-    /* background-color: darkorange; */
     overflow: hidden;
     padding: 25px;
-
     height: 100%;
 }
 
@@ -123,7 +105,6 @@
 }
 
 .lado-izquierdo .contenedor-img {
-    /* background-color: #fff; */
     text-align: center;
     margin: 40px;
 }
@@ -149,8 +130,6 @@
     overflow: hidden;
     padding: 25px;
     height: 100%;
-
-
 }
 
 .lado-derecho h2 {
@@ -167,7 +146,6 @@
 
 .lado-derecho img {
     width: 100%;
-
 }
 
 .lado-derecho button {

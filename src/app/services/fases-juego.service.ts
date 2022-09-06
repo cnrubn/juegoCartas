@@ -11,7 +11,6 @@ export class FasesJuegoService {
   cartasJugando: Carta[] = [];
   iniciadoJuego: boolean = false;
   jugador!: any;
-
   siguienteNivel: boolean = false;
 
 
@@ -20,24 +19,19 @@ export class FasesJuegoService {
 
   
   fase1_ObtenerCartas(){
-
     return this.sv.paso1Size();
-
   }
 
   fase2_Comprobación( num1: number, num2: number, cartas: Carta[] ){
 
     this.cartasJugando = cartas;
 
-
     const carta1: any = this.cartasJugando[ num1 ].id;
     const carta2: any = this.cartasJugando[ num2 ].id;
-
 
     this.jugador = this.sv.getJugadorLocalStorage();
 
     // COMPROBACIONES
-
     let acierto: boolean = false;
 
     if( carta1 === carta2 ){
@@ -53,17 +47,10 @@ export class FasesJuegoService {
     } else {
 
       this.jugador.intentos++;
-
       this.sv.guardarJugadorLocalStorage();
 
-      
-
       return acierto;
-
-      
     }
-
-
 
   }
 
@@ -79,24 +66,14 @@ export class FasesJuegoService {
     this.jugador.intentos = 0; 
     this.jugador.nivel++;
 
-    // console.log('this.jugador::', this.jugador)
-
-
     this.sv.guardarJugadorLocalStorage();
     
     for( let carta of this.cartasJugando ){
         carta.clickado = false;
     }
-
-
-
-
-
   } 
 
   fase_Restablecer(){
-
-    // console.log('restablecer')
 
     this.sv.jugador = {
       nombre: '',

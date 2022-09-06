@@ -16,22 +16,17 @@ export class IntroJuegoComponent implements OnInit {
 
   nombreIncorrecto: boolean = false;
 
-  jugador!: Jugador;
-
-  infoFases!: infoFases[];
-
-  infoMostrar!: infoFases;
-
-
   @Output() siguienteEtapa = new EventEmitter<boolean>();
+  
+  jugador!: Jugador;
+  infoFases!: infoFases[];
+  infoMostrar!: infoFases;
 
   constructor( private sv: JuegoServiciosService,
                private secuencia: SecuenciaJuegoService,
                private info: InfoFasesService  ) { }
 
   ngOnInit(): void {
-
-    // console.log('this.infoMostrar');
 
     this.infoFases = this.info.infoFases;
 
@@ -47,32 +42,21 @@ export class IntroJuegoComponent implements OnInit {
 
       for( let msg in this.infoFases ){
         if( nivel === this.infoFases[msg].id ){
-          // console.log( ' msg', msg)
-          // console.log( 'objeto', this.infoFases[msg])
-          this.infoMostrar = this.infoFases[msg];
 
+          this.infoMostrar = this.infoFases[msg];
           this.activaIntro = false;
           this.activaReglas = false;
           this.activaNiveles = true;
-          
-          
         } 
       }
 
       
     } else {
       this.infoMostrar = this.infoFases[8];
-
       this.activaIntro = false;
       this.activaReglas = false;
       this.activaNiveles = true;
-
-
     }
-
-
-
-
   }
 
   introNombre( nombre: any ){
@@ -84,25 +68,17 @@ export class IntroJuegoComponent implements OnInit {
       return;
     }
 
-    // this.jugador = this.sv.getJugadorLocalStorage();
     this.jugador.nombre = nombre;
     this.sv.guardarJugadorLocalStorage();
-
     this.infoMostrar = this.infoFases[1];
-
-
     this.activaIntro = false;
     this.activaReglas = true;
-    
-    // console.log(this.infoMostrar);
     
   }
 
   siguienteReglas(){
-    // this.activaReglas = false;
 
     this.siguienteEtapa.emit(true);
-
   }
 
 

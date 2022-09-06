@@ -4,11 +4,6 @@
     min-height: 5vh;
 }
 
-.bloque-txt {
-    /* background-cdolor: antiquewhite; */
-
-}
-
 .bloque-txt h3 {
     font-size: 15px;
     text-align: center;
@@ -17,8 +12,6 @@
 .bloque-redes {
     font-size: 15px;
     margin-top: 10px;
-    /* background-color: #ccc; */
-
 }
 
 .bloque-redes ul {
@@ -36,10 +29,8 @@
     margin: 0 5px;
 }
 
-
 .bloque-redes ul li:hover a {
     color: #fff;
-    
 }
 
 

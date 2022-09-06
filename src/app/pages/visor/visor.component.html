@@ -1,8 +1,6 @@
 <div class="contenedor-visor d-flex justify-content-center align-items-center">
     
-
     <div class="contenedor-visor-flotante">
-
 
         <div    class="contenedor-visor-juego d-flex flex-column"
                 *ngIf="visorActivo else pregunta"
@@ -20,7 +18,6 @@
                 
             </div>
 
-
             <div class="botonera d-flex flex-column align-items-center">
                 <button (click)="inicioJuego()"
                         class="jugar"
@@ -34,12 +31,10 @@
                 </button>
             </div>
 
-
         </div>
 
         <!-- ADVERTENCIA RESTABLECER JUEGO -->
         <ng-template    #pregunta>
-
 
             <div class="contenedor-advertencia d-flex flex-column align-items-center justify-content-center">
 
@@ -60,12 +55,9 @@
 
             </div>
 
-
         </ng-template>
 
-
     </div>
-    
     
 </div>
 

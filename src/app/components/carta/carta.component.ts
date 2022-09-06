@@ -10,18 +10,15 @@ import { FasesJuegoService } from 'src/app/services/fases-juego.service';
 export class CartaComponent implements OnInit {
 
   @Input() cartas: Carta[] = [];
-  arrayRef: number[] = [];
-
-  tiempoError: boolean = false;
-
-  click1: number = -1;
-  click2: number = -1;
-
-  respuestaServicio: boolean = false;
-
-  arrayClickados: number[] = [];
 
   @Output() completadoNivel = new EventEmitter<boolean>();
+
+  arrayRef: number[] = [];
+  tiempoError: boolean = false;
+  click1: number = -1;
+  click2: number = -1;
+  respuestaServicio: boolean = false;
+  arrayClickados: number[] = [];
 
 
   constructor( private fasesServicios: FasesJuegoService ) { }
@@ -39,8 +36,6 @@ export class CartaComponent implements OnInit {
     }
 
 
-    
-    
     // Asignación valores a propiedades, para luego comparar.
     if( this.click1 === -1 && this.click2 === -1 ){
       this.click1 = i;
@@ -58,7 +53,6 @@ export class CartaComponent implements OnInit {
     if( this.click1 !== -1 && this.click2 !== -1 ){
       this.respuestaServicio = this.fasesServicios.fase2_Comprobación( this.click1, this.click2, this.cartas );
     }
-
 
 
     // INTENTO FALLIDO

@@ -81,12 +81,9 @@ export class JuegoServiciosService {
   constructor() { 
 
     this.getJugadorLocalStorage();
-
     this.jugador.intentos = 0;
-
     this.guardarJugadorLocalStorage();
 
-    // this.paso1Size();
   }
 
   getJugador(){
@@ -94,31 +91,22 @@ export class JuegoServiciosService {
   }
 
   getJugadorLocalStorage(){
+
     if( localStorage.getItem( 'jugador' ) ){
       this.jugador = JSON.parse( localStorage.getItem( 'jugador' )! );
     } 
-
-    // console.log('jgd', this.jugador);
-
     return this.jugador;
   }
 
   guardarJugadorLocalStorage() {
-    localStorage.setItem( 'jugador', JSON.stringify( this.jugador ) );
 
+    localStorage.setItem( 'jugador', JSON.stringify( this.jugador ) );
     return this.jugador;
   }
 
-
-
-
-
+  
   paso1Size(){
     // Según el nivel de jugador hay 3 posibles tableros de juegos. Aquí se selecciona el nº de elementos que vamos a necesitar.
-
-
-
-
     let numCartas: number;
     
     if( this.jugador.nivel <= 1 ){
@@ -129,15 +117,11 @@ export class JuegoServiciosService {
       numCartas = 10;
     }
 
-    // console.log( this.jugador );
-    // console.log( 'numCartas', numCartas)
-
     return this.paso2Seleccionadas( numCartas );
   }
 
   paso2Seleccionadas( num: number ) {
     // A continuación se construye un array con id de carta únicos.
-
     let cartasSeleccionadas: number[] = [];
     let numRandom: number;
     let unica: boolean = true;
@@ -167,8 +151,6 @@ export class JuegoServiciosService {
       
     }
 
-    // console.log( 'cartasSeleccionadas', cartasSeleccionadas)
-
     return this.paso3CompletarObjeto( cartasSeleccionadas );
 
   }
@@ -184,39 +166,13 @@ export class JuegoServiciosService {
       [array[i], array[j]] = [array[j], array[i]];
     }
 
-    // console.log(array)
-    // console.log( '>>this.cartasRonda 1', this.cartasRonda )
-
-
     // Con el array completo ahora falta convertirlo en la colección de objetos con los datos de cada carta.
     this.cartasRonda = [];
-
-    // console.log( '>>this.cartasRonda 2', this.cartasRonda )
-
     
     for( let carta of array){
       this.cartasRonda.push(this.cartas[carta]);
     }
 
-
-
-
-    // console.log( '>>this.cartasRonda', this.cartasRonda )
-
-
-
-
     return this.cartasRonda;
-    
   }
-
-
-
-  
-  
-  
-  
-
-  
-  
 }

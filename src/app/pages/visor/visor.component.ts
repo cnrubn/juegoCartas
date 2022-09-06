@@ -10,16 +10,13 @@ import { JuegoServiciosService } from 'src/app/services/juego-servicios.service'
 })
 export class VisorComponent implements OnInit, DoCheck {
 
+  @Output() iniciadoJuego = new EventEmitter<boolean>();
+  @Output() reset = new EventEmitter<boolean>();
+
   jugador!: any;
   cartasJugando: Carta[] = []; 
-
   restablecer: boolean = false;
-
   visorActivo: boolean = true;
-
-  @Output() iniciadoJuego = new EventEmitter<boolean>();
-
-  @Output() reset = new EventEmitter<boolean>();
 
 
   constructor( private sv: JuegoServiciosService,
@@ -45,14 +42,8 @@ export class VisorComponent implements OnInit, DoCheck {
   }
   
   
-
   inicioJuego(){
-
-    // console.log(this.iniciadoJuego)
-
-
     this.iniciadoJuego.emit(true);
-    
   }
 
   preRestablecerJuego(){
@@ -61,14 +52,12 @@ export class VisorComponent implements OnInit, DoCheck {
 
   cancelar(){
     this.visorActivo = true;
-
   }
 
 
   restablecerJuego(){
 
     this.fasesService.fase_Restablecer();
-
     this.reset.emit(true);
 
   }

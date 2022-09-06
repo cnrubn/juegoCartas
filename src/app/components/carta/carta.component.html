@@ -1,4 +1,4 @@
-<div    class="contenedor-superior-cartas"
+<div    class="contenedor-superior-cartas "
         *ngIf="cartas.length > 0"
         >
 
@@ -13,10 +13,8 @@
                                         'clickado': carta.clickado,
                                         'error': tiempoError && i === click1|| i === click2 }"
                         >
-                        <p>{{ carta.id }}</p>
+                        <!-- <p>{{ carta.id }}</p> -->
 
-
-                        
                         <img    [src]="carta.img"
                         [alt]="carta.nombre"
                         class="img"
@@ -28,9 +26,6 @@
                                 <img    src="assets/img/placeholder11.png"
                                 alt="..."
                                 class="img"
-                                
-        
-                        
                                 >
 
                         </ng-template>
